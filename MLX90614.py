@@ -31,6 +31,8 @@ def read_temp(addr = MLX_DEFAULT_ADDRESS, reg = MLX_RAM_ADDR, bus = SMBUS):
 	tempObj = None
 	try:
 		tempObj = bus.read_byte_data(addr, reg)
+		return tempObj#Probably will need to do some math on this number; we will see.
 	except:
 		print("Error reading MLX90614 Sensor...")
+		return 0
 		
